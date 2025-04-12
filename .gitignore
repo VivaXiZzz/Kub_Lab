@@ -1,0 +1,26 @@
+# Исключаем отладочные и временные файлы
+*.obj
+*.exe
+*.pdb
+*.idb
+*.suo
+*.user
+*.ipch
+*.aps
+*.ncb
+*.log
+*.tlog
+*.lastbuildstate
+*.opensdf
+*.sdf
+*.cache
+*.ilk
+*.tmp
+*.vcxproj.user
+
+# Папки Visual Studio
+Debug/
+Release/
+x64/
+ipch/
+.vs/
