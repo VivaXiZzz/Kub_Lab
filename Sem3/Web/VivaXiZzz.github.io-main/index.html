@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <html lang ="ru">
+    <head>
+      <meta charset="utf-8">
+      <title>INDEX</title>
+    </head>
+    <body>
+      <ul>
+        <li><a href="https://kubsu.ru/">1.Абсолютная ссылка на КубГУ</a></li>
+        <li><a href="http://kubsu.ru/">2.Абсолютная незащищенная ссылка на КубГУ</a></li>
+        <li><a href="https://kubsu.ru/"><img src="img/жепег.jpg" width="250" height="250" alt="3.Ссылка-картинка"></a></li>
+        <li><a href="babaout/inside.html">4.Ссылка на внутреннюю страницу</a></li>
+        <li><a href="index.html">5.Ссылка на главную страницу</a></li>
+        <li><a href="#name">6.Ссылка на фрагмент текущей страницы</a></li>
+        <li><a href="https://www.codewars.com/kata/search/c?q=&r%5B%5D=-1&order_by=rank_id%20desc">7.Ccылка с 3 URL параметрами(?= &= &=)</a></li>
+        <li><a href="https://www.youtube.com/watch?id=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">8.Ссылка с параметром id </a></li>
+        <li><a href="">9.Ссылка на текущий каталог</a></li>
+        <li><a href="about/page.html">10.Ссылка на страницу в каталоге about</a></li>
+        <li><a href="../about/page.html">11.Ссылка на страницу каталогом выше</a></li>
+        <li><a href="../../page.html">12.Ссылка на страницу двумя каталогами ниже</a></li>
+        <li>13.Классное <a href="https://www.youtube.com/watch?v=IvUU8joBb1Q"> видео</a> все-таки</li>
+        <li><a href="http://stackoverflow.com/questions/8424785/link-to-a-section-of-a-webpage#post-form">14.Ссылка на фрагмент страницы StackOverFlow</a></li>
+        <li><img src="img/жепег.jpg" width="250" height="250" alt="15.Ссылка-картинка" usemap="#antimage">
+          <map name="antimage">
+            <area shape="rect" coords="50,50,75,75" href="index.html" alt="1">
+            <area shape="circle" coords="125,125,75" href="index.html" alt="2">
+          </map>
+        </li>
+        <li><a href="">16.Пустой href</a></li>
+        <li><a href="index" onclick="return false">17.Ссылка но не работает</a></li>
+        <li><a href="index" rel="nofollow" target="_blank">18.Ссылка с запрещенным переходом</a></li>
+        <li><!--noindex--><a href="index">19.Ссылка на страницу двумя каталогами ниже</a><!--/noindex--> </li>
+        <li>
+          <ol type = "A">
+            <li><a href="https://www.google.ru/?hl=ru">20,1.Ссылка на гугл</a></li>
+            <li><a href="https://www.youtube.com/">20,2.Ссылка на ютюб</a></li>
+          </ol>
+        </li>
+        <li><a href="ftp://user:sobaka@manera.com/a/b.zip">21.Ссылка на ftp</a></li>
+      </ul>
+    <a id="#name"></a>
+    <form>
+      <br><input type="text" name="Name" placeholder="ФИО" size="40">
+      <br><input type="tel" name="Phone" placeholder="Номер телефона" size="40">
+      <br><input type="email" name="Email" placeholder="Эмейл" size="40">
+      <br><label> Введите вашу дату дня рождения</label>
+      <br><input type="date" name="Date" value="1994-01-01" size="40">
+      <br><input type="radio" id="var1" name="Sex" value="Man"><label>Мужской</label>
+      <br><input type="radio" id="var2" name="Sex" value="Woman"><label>Женский</label>
+      <p>
+        <br><label>Выберите свой любимый ЯП</label>
+        <br><select name="Language" multiple="multiple">
+          <option value="1">Pascal</option>
+          <option value="2">C</option>
+          <option value="3">C++</option>
+          <option value="4">JavaScript</option>
+          <option value="5">PHP</option>
+          <option value="6">Python</option>
+          <option value="7">Java</option>
+          <option value="8">Haskel</option>
+          <option value="9">Clojure</option>
+          <option value="10">Prolog</option>
+          <option value="11">Scala</option>
+        </select>
+      </p>
+      <label>
+        Биография
+        <br><textarea name="Bio">Био</textarea>
+      </label>
+      <br><input type="checkbox" checked="checked" name="checked">"С контрактом ознакомлен"
+      <br><button type="submit" value="Сохранить">Подписываю все вышесказанное</button>
+    </form>
+  </body>
+</html>
+
+

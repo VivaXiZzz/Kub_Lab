@@ -1,0 +1,43 @@
+body {
+    background: #1f1f1f;
+    color: #808080;
+  }
+  .content {
+    margin: auto;
+    padding: 30px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+.slick-slide .image {
+    padding: 10px;
+    margin:0 auto;
+}
+.slick-slide img {
+    border: 5px solid #808080;
+    width:30vm;
+    height: 30vw;
+    width:80%;
+    margin:0 auto;
+  }
+.slick-slide img.slick-loading {
+    border: 0;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    color: #ce723c;
+    font-size: 25px;
+}
+
+.slick-dots
+{
+    margin: 0 10px;
+    color: #ce723c;
+}
+
+h1
+{
+    text-align:center;
+}

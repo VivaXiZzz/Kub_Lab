@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title> Task_6 </title>
+</head>
+
+<style>
+.hide
+{
+  display:none;
+}
+</style>
+
+<body style="margin: 0;width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;background-color:#808080">
+  <form id="form" style="width:300px;background-color:#565656">
+    <div class="col" style="margin:10px 0;margin-left:64px"> <input id="col" type="text" placeholder="Количество товаров"> </div>
+    
+    <div>
+      <div>
+        <label>
+          <input type="radio" name="r" id="r1" price="120"> Лягушки — 120
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="radio" name="r" id="r2"> Земноводные со смешным названием
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="radio" name="r" id="r3" price="180"> Пельмени — 180
+        </label>
+      </div>
+    </div>
+
+    <div id="sel" class="sel hide" style="margin:10px;margin-left:21px">
+      <select id="goods" name="goods" title="жабы">
+        <option value="ts" price="1000"> Титикакский свистун - 1000 </option>
+        <option value="ns" price="1500"> Nasikabatrachus sahyadrensis — 1500 </option>
+        <option value="aga" price="500"> Жаба ага — 500 </option>
+      </select>
+    </div>
+
+    <div id="box" class="ch hide" style="margin:10px">
+      <div>
+        <label>
+          <input type="checkbox" name="cb" id="cb1" price="200"> С индейкой — 200
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" name="cb" id="cb2" price="300"> С мраморной говядиной — 300
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" name="cb" id="cb3" price="100"> Просто вкусные - 100
+        </label>
+      </div>
+    </div>
+
+    <div id="result" style="margin:10px"> 0 </div>
+  </form>
+  <script src="6.js" defer> </script>
+</body>
+</html>

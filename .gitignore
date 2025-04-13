@@ -24,3 +24,6 @@ Release/
 x64/
 ipch/
 .vs/
+
+# Файлы с путем
+launch.json
