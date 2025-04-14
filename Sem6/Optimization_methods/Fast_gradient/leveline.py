@@ -10,7 +10,7 @@ with open('points.txt', 'r') as file:
         x_str, y_str = line.strip().split()
         x, y = float(x_str), float(y_str)
         z = f(x, y)
-        points.append((x, y))  # Сохраняем только x и y для траектории
+        points.append((x, y))
 
 x = np.linspace(-5, 5, 100)
 y = np.linspace(-5, 5, 100)
@@ -33,4 +33,7 @@ plt.ylabel('x2')
 plt.legend()
 plt.colorbar(contour)
 plt.grid(True)
+
+plt.savefig('2d_plot.png', dpi=300, bbox_inches='tight')
+
 plt.show()

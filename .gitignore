@@ -17,6 +17,8 @@
 *.ilk
 *.tmp
 *.vcxproj.user
+# файлы для инициализации в OpenServer
+.osp
 
 # Папки Visual Studio
 Debug/
@@ -27,3 +29,4 @@ ipch/
 
 # Файлы с путем
 launch.json
+db_credentials.php
