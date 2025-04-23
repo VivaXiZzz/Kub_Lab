@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <cmath>
 using namespace std;
 const double EPS =1e-7;
 
@@ -245,7 +246,7 @@ vector<double> newton(vector<double>&v,int&steps,string&exit,double EPS1=0.1,dou
         }
     }
     fin<<endl; //...
-    if((norm_razn(v,vtemp)<EPS2)&&abs((f(v)-f(vtemp))<EPS2))p++;
+    if((norm_razn(v,vtemp)<EPS2)&&abs(f(v)-f(vtemp))<EPS2)p++;
     else p=0;
     if(p==2){
         exit = "EPS2";

@@ -25,11 +25,10 @@ vector<double> gradient(vector<double> v){
     return g;
 }
 
-double p(vector<double> v,double t){
+double p(vector<double> v,double t,vector<double>d){
     vector<double> dv;
-    vector<double> vg = gradient(v);
     for(int i=0;i<size(v);++i){
-        dv.push_back(v[i]-t*vg[i]);
+        dv.push_back(v[i]+t*d[i]);
     }
     return f(dv);
 }
@@ -49,49 +48,65 @@ double norm_razn(vector<double> v1,vector<double> v2){
     return sqrt(sum);
 }
 
-// double dichotomy_method(vector<double> v,double a=0, double b=1, double l=0.05, double epsilon =0.005) 
-// {
-//     int k = 0;
-//     double y,z;
-//     while (b - a >= l) {
+vector<double> minus_grad(vector<double> v){
+    for(int i=0;i<size(v);++i)
+        v[i]=-v[i];
+    return v;
+}
 
-//         y = (a + b - epsilon) / 2.0;
-//         z = (a + b + epsilon) / 2.0;
+vector<double> dsum(vector<double>grad,vector<double> d,double beta){
+    vector<double> v;
+    for(int i=0;i<size(grad);++i){
+        v.push_back(-grad[i]+beta*d[i]);
+    }
+    return v;
+}
+
+double dichotomy_method(vector<double> v,vector<double> d,double a=0, double b=1, double l=0.05, double epsilon =0.005) 
+{
+    int k = 0;
+    double y,z;
+    while (b - a >= l) {
+
+        y = (a + b - epsilon) / 2.0;
+        z = (a + b + epsilon) / 2.0;
         
-//         double fy = p(v,y);
-//         double fz = p(v,z);
+        double fy = p(v,y,d);
+        double fz = p(v,z,d);
 
-//         if (fy < fz) {
-//             b = z;
-//         } else {
-//             a = y;
-//         }
-//     }
-//     double min = (a+b)/2.0;
-//     return (a + b) / 2.0;
-// }
-
-double dichotomy_method(vector<double> v){
-    return (pow((2*v[0]-v[1]+1),2)+pow((10*v[1]-v[0]),2))/(2*pow((2*v[0]-v[1]),2)+10*pow((10*v[1]-v[0]),2)+4*(2*v[0]-v[1]+1)*(10*v[1]-v[0]));
+        if (fy < fz) {
+            b = z;
+        } else {
+            a = y;
+        }
+    }
+    double min = (a+b)/2.0;
+    return (a + b) / 2.0;
 }
 
 vector<double> grad_min(vector<double>&v,int&steps,string&exit,double EPS1=0.1,double EPS2=0.15,int m = 10){
     fstream fin("points.txt");
     int p=0;
-    double norma,t;
-    vector<double> grad,vtemp;
+    double norma,norma_pred,t,beta;
+    vector<double> grad,vtemp,d;
     fin<<v[0]<<" "<<v[1]<<endl; //график будет только для функции 2ух переменных
     for(int k=0;k<m;++k){
     steps = k; // чтобы узнать N не более
     vtemp = v;
     grad = gradient(v);
-    if(norm(grad)<EPS1){
+    if(k!=0)norma_pred=norma;
+    if(k==0) d = minus_grad(grad);
+    norma = norm(grad);
+    if(norma<EPS1){
         exit = "EPS1";
         return v;
     }
-    t = dichotomy_method(v);
+    if(k!=0){beta = pow(norma,2) / pow(norma_pred,2);
+    d = dsum(grad,d,beta);
+    }
+    t = dichotomy_method(v,d);
     for(int i=0;i<size(v);++i){
-        v[i]-=t*grad[i];
+        v[i]+=t*d[i];
         fin<<v[i]<<" "; //...
     }
     fin<<endl; //...
